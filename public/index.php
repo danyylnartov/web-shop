@@ -3,5 +3,6 @@
 require_once dirname(__DIR__) . '/config/init.php';
 require_once LIBS . '/functions.php';
 
-$app = new \webShop\App();
-debug(\webShop\App::$app->getProperties());
+new \webShop\App();
+
+throw new Exception('Page is not found', 500);
