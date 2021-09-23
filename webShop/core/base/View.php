@@ -40,7 +40,7 @@ class View {
 			throw new \Exception("Не найден вид {$viewFile}", 500);
 		}
 		if (false !== $this->layout) {
-			echo $layoutFile = APP . "/views/layouts/{$this->layout}.php";
+			$layoutFile = APP . "/views/layouts/{$this->layout}.php";
 			if (is_file($layoutFile)) {
 				require_once $layoutFile;
 			} else {
