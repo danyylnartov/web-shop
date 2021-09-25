@@ -4,6 +4,7 @@
 namespace app\controllers;
 
 
+use app\models\Breadcrumbs;
 use app\models\Product;
 use RedBeanPHP\R;
 
@@ -17,6 +18,7 @@ class ProductController extends AppController {
 		}
 
 		// Bread crumbs
+		$breadcrumbs = Breadcrumbs::getBreadcrumbs($product->category_id, $product->title);
 
 		// Связанные товары
 
@@ -43,7 +45,7 @@ class ProductController extends AppController {
 		// модификации
 
 		$this->setMeta($product->title, $product->description, $product->keywords);
-		$this->set(compact(['product', 'related', 'gallery', 'recentlyViewed']));
+		$this->set(compact(['product', 'related', 'gallery', 'recentlyViewed', 'breadcrumbs']));
 
 	}
 
