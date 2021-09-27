@@ -4,6 +4,7 @@
 namespace webShop\base;
 
 
+use RedBeanPHP\R;
 use Valitron\Validator;
 use webShop\Db;
 
@@ -35,6 +36,14 @@ abstract class Model {
 		}
 		$this->errors = $v->errors();
 		return false;
+	}
+
+	public function save($table) {
+		$tbl = R::dispense($table);
+		foreach ($this->attributes as $name => $value) {
+			$tbl->$name = $value;
+		}
+		return R::store($tbl);
 	}
 
 	public function getErrors() {
