@@ -3,7 +3,15 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1 class="m-0">Заказ №<?=$order['id'];?></h1>
+				<h1 class="m-0">
+                    Заказ №<?=$order['id'];?>
+                    <?php if (!$order['status']): ?>
+                        <a href="<?=ADMIN;?>/order/change?id=<?=$order['id'];?>&status=1" class="btn btn-success btn-xs">Одобрить</a>
+                    <?php else: ?>
+                        <a href="<?=ADMIN;?>/order/change?id=<?=$order['id'];?>&status=0" class="btn btn-default btn-xs">Вернуть на доработку</a>
+                    <?php endif; ?>
+                    <a href="<?=ADMIN;?>/order/delete?id=<?=$order['id'];?>" class="btn btn-danger btn-xs delete">Удалить</a>
+                </h1>
 			</div><!-- /.col -->
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
@@ -42,7 +50,7 @@
                                     </tr>
                                     <tr>
                                         <td>Количество позиций в заказе</td>
-                                        <td>--</td>
+                                        <td><?=count($order_products);?></td>
                                     </tr>
                                     <tr>
                                         <td>Сумма заказа</td>

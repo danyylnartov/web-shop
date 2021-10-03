@@ -25,6 +25,7 @@
 	<link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
 	<!-- summernote -->
 	<link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="my.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -328,6 +329,16 @@
 
 	<!-- Content Wrapper. Contains page content -->
 	<div class="content-wrapper">
+		<?php if (isset($_SESSION['error'])): ?>
+            <div class="alert alert-danger">
+				<?php echo $_SESSION['error']; unset($_SESSION['error']);?>
+            </div>
+		<?php endif; ?>
+		<?php if (isset($_SESSION['success'])): ?>
+            <div class="alert alert-success">
+				<?php echo $_SESSION['success']; unset($_SESSION['success']);?>
+            </div>
+		<?php endif; ?>
 		<?=$content;?>
 	</div>
 	<!-- /.content-wrapper -->
@@ -383,6 +394,7 @@
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
+<script src="my.js"></script>
 
 <?php
 $logs = \RedBeanPHP\R::getDatabaseAdapter()
