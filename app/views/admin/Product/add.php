@@ -97,6 +97,40 @@
 
                             <?php new \app\widgets\filter\Filter(null, WWW . '/filter/admin_filter_tpl.php'); ?>
 
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card card-danger file-upload">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Базовое изображение</h3>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="single" class="btn btn-success" data-url="product/add-image" data-name="single">Выбрать файл</div>
+                                                <p><small>Рекомендуемые размеры: 125x200</small></p>
+                                                <div class="single"></div>
+                                            </div>
+                                            <div class="overlay"><i class="fas fa-2x fa-sync-alt fa-spin"></i></div>
+                                            <!-- end loading -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card card-primary file-upload">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Картинки галереи</h3>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="multi" class="btn btn-success" data-url="product/add-image" data-name="multi">Выбрать файл</div>
+                                                <p><small>Рекомендуемые размеры: 700x1000</small></p>
+                                                <div class="multi"></div>
+                                            </div>
+                                            <div class="overlay"><i class="fas fa-2x fa-sync-alt fa-spin"></i></div>
+                                            <!-- end loading -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
 						</div>
 						<div class="card-footer">
 							<button type="submit" class="btn btn-success">Добавить</button>

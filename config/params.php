@@ -9,4 +9,8 @@ return [
 	'smtp_protocol' => 'SSL',
 	'smtp_login' => 'danyylnartov21@gmail.com',
 	'smtp_password' => '11ZB*PSza&Q',
+	'img_width' => 125,
+	'img_height' => 200,
+	'gallery_width' => 700,
+	'gallery_height' => 1000,
 ];
