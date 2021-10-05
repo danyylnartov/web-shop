@@ -6,10 +6,13 @@
                     <a <?php if($i == 1) echo ' class="nav-link active"'; else echo ' class="nav-link"';?> href="#tab_<?= $group_id ?>" data-toggle="tab" aria-expanded="true"><?= $group_item ?></a>
                 </li>
 				<?php $i++; endforeach; ?>
+            <li style="position: absolute; right: 3px;">
+                <a href="" id="reset-filter" class="btn btn-danger">Сброс</a>
+            </li>
         </ul>
     </div>
 	<div class="card-body">
-        <div class="tab-content">
+        <div class="tab-content" id="filter">
 			<?php if(!empty($this->attrs[$group_id])): ?>
 				<?php $i = 1; foreach($this->groups as $group_id => $group_item): ?>
                     <div class="tab-pane<?php if($i == 1) echo ' active' ?>" id="tab_<?= $group_id ?>">
