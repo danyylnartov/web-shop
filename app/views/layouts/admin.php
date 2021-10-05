@@ -174,7 +174,7 @@
                         </p>
                     </span>
                     <div class="dropdown-divider"></div>
-                    <a href="<?=ADMIN;?>/user/edit?id<?=$_SESSION['user']['id'];?>" class="dropdown-item">
+                    <a href="<?=ADMIN;?>/user/edit?id=<?=$_SESSION['user']['id'];?>" class="dropdown-item">
                         Profile
                     </a>
                     <div class="dropdown-divider"></div>
