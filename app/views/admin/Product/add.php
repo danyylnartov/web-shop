@@ -88,6 +88,8 @@
                                 </label>
                             </div>
 
+                            <?php new \app\widgets\filter\Filter(null, WWW . '/filter/admin_filter_tpl.php'); ?>
+
 						</div>
 						<div class="card-footer">
 							<button type="submit" class="btn btn-success">Добавить</button>
