@@ -96,7 +96,6 @@
                             </div>
 
                             <?php new \app\widgets\filter\Filter(null, WWW . '/filter/admin_filter_tpl.php'); ?>
-
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-4">

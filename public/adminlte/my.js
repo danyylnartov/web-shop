@@ -44,7 +44,7 @@ var buttonSingle = $("#single"),
     buttonMulti = $("#multi"),
     file;
 new AjaxUpload(buttonSingle, {
-   action: adminpath + buttonSingle.data('url') + "?upload=1",
+   action: adminpath + '/' + buttonSingle.data('url') + "?upload=1",
    data: {name: buttonSingle.data('name')},
    name: buttonSingle.data('name'),
    onSubmit: function(file, ext){
@@ -52,12 +52,12 @@ new AjaxUpload(buttonSingle, {
          alert('Ошибка! Разрешены только картинки');
          return false;
       }
-      buttonSingle.closest('.file-upload').find('.overlay').css({'display':'block'});
+      buttonSingle.closest('.file-upload').find('.overlay').css('cssText', 'display: flex !important;');
 
    },
    onComplete: function(file, response){
       setTimeout(function(){
-         buttonSingle.closest('.file-upload').find('.overlay').css({'display':'none'});
+         buttonSingle.closest('.file-upload').find('.overlay').css('cssText', 'display: none !important;');
 
          response = JSON.parse(response);
          $('.' + buttonSingle.data('name')).html('<img src="/images/' + response.file + '" style="max-height: 150px;">');
@@ -66,7 +66,7 @@ new AjaxUpload(buttonSingle, {
 });
 
 new AjaxUpload(buttonMulti, {
-   action: adminpath + buttonMulti.data('url') + "?upload=1",
+   action: adminpath + '/' +  buttonMulti.data('url') + "?upload=1",
    data: {name: buttonMulti.data('name')},
    name: buttonMulti.data('name'),
    onSubmit: function(file, ext){
@@ -74,12 +74,12 @@ new AjaxUpload(buttonMulti, {
          alert('Ошибка! Разрешены только картинки');
          return false;
       }
-      buttonMulti.closest('.file-upload').find('.overlay').css({'display':'block'});
+      buttonMulti.closest('.file-upload').find('.overlay').css('cssText', 'display: flex !important;');
 
    },
    onComplete: function(file, response){
       setTimeout(function(){
-         buttonMulti.closest('.file-upload').find('.overlay').css({'display':'none'});
+         buttonMulti.closest('.file-upload').find('.overlay').css('cssText', 'display: none !important;');
 
          response = JSON.parse(response);
          $('.' + buttonMulti.data('name')).append('<img src="/images/' + response.file + '" style="max-height: 150px;">');
