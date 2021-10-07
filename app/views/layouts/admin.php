@@ -322,6 +322,48 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-dollar-sign"></i>
+                            <p>
+                                Валюты
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?=ADMIN;?>/currency" class="nav-link">
+                                    <p>Список Валют</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?=ADMIN;?>/currency/add" class="nav-link">
+                                    <p>Добавить валюту</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-filter"></i>
+                            <p>
+                                Фильтры
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?=ADMIN;?>/filter/attribute-group" class="nav-link">
+                                    <p>Группы фильтров</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?=ADMIN;?>/filter/attribute" class="nav-link">
+                                    <p>Фильтры</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 				</ul>
 			</nav>
 			<!-- /.sidebar-menu -->
