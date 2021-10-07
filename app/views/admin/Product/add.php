@@ -24,7 +24,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card">
-					<form action="<?=ADMIN;?>/product/add" method="post" role="form" data-toggle="validator">
+					<form action="<?=ADMIN;?>/product/add" method="post" role="form" data-toggle="validator" id="add">
 						<div class="card-body">
 
 							<div class="form-group has-feedback">
