@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 08 2021 г., 18:24
+-- Время создания: Окт 10 2021 г., 17:40
 -- Версия сервера: 10.3.22-MariaDB
 -- Версия PHP: 7.4.5
 
@@ -277,20 +277,21 @@ CREATE TABLE `order` (
   `date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_at` timestamp NULL DEFAULT NULL,
   `currency` varchar(10) NOT NULL,
-  `note` text DEFAULT NULL
+  `note` text DEFAULT NULL,
+  `sum` float NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `order`
 --
 
-INSERT INTO `order` (`id`, `user_id`, `status`, `date`, `update_at`, `currency`, `note`) VALUES
-(9, 8, 1, '2021-09-28 05:28:23', '2021-10-03 18:22:03', 'USD', 'Test 2'),
-(10, 8, 1, '2021-09-28 05:32:59', '2021-10-05 07:47:28', 'EUR', ''),
-(11, 8, 0, '2021-09-28 05:36:24', NULL, 'EUR', 'Test'),
-(13, 8, 0, '2021-10-03 13:31:38', NULL, 'EUR', ''),
-(14, 10, 0, '2021-10-03 13:33:39', NULL, 'UAH', ''),
-(15, 10, 0, '2021-10-03 13:33:57', NULL, 'UAH', '');
+INSERT INTO `order` (`id`, `user_id`, `status`, `date`, `update_at`, `currency`, `note`, `sum`) VALUES
+(9, 8, 1, '2021-09-28 05:28:23', '2021-10-03 18:22:03', 'USD', 'Test 2', 0),
+(10, 8, 1, '2021-09-28 05:32:59', '2021-10-05 07:47:28', 'EUR', '', 0),
+(11, 8, 0, '2021-09-28 05:36:24', NULL, 'EUR', 'Test', 0),
+(13, 8, 0, '2021-10-03 13:31:38', NULL, 'EUR', '', 0),
+(14, 10, 0, '2021-10-03 13:33:39', NULL, 'UAH', '', 0),
+(15, 10, 0, '2021-10-03 13:33:57', NULL, 'UAH', '', 0);
 
 -- --------------------------------------------------------
 
@@ -456,7 +457,8 @@ INSERT INTO `user` (`id`, `login`, `password`, `email`, `name`, `address`, `role
 (8, 'Danyyl37', '$2y$10$TRdqlTKC.DMHsSF3W2VBBu932NHrdHUTOmKn7TbeVHq52DQqDqLy.', 'test123t@gmail.com', 'Danyyl', 'Kiev', 'user'),
 (9, 'admin', '$2y$10$5Zlek2MLNH3ag8zNv8byuOOQ0Q80c77HNxrKFK0vqu15OeeoA33qy', 'admin@gmail.com', 'Edward', 'London', 'admin'),
 (10, 'AlfredKing', '$2y$10$OuxudjmRnkE6WM9pqmzZluXlsCwEA0c69zUGuSA01MwF/d5qCqVt6', 'alfred@webshop.com', 'Alfred', 'England', 'user'),
-(11, 'User11', '$2y$10$rHX8ZAYzuik7hQAFufaK1unpgixOxI8fE0DXf5F1v0goc0ji7wfQK', 'test@gmail.com', 'Johny Marly Depp', 'Улица Ленина, 57', 'user');
+(11, 'User11', '$2y$10$rHX8ZAYzuik7hQAFufaK1unpgixOxI8fE0DXf5F1v0goc0ji7wfQK', 'test@gmail.com', 'Johny Marly Depp', 'Улица Ленина, 57', 'user'),
+(12, 'Danyyl777', '$2y$10$fsf1bjm0zOJLZfROV6J81Oi/.7uHha5QYPI0TRhRcizgonkIHFRN2', 'danyylnartov21@gmail.com', 'Johny Marly Depp', 'Улица Ленина, 57', 'user');
 
 --
 -- Индексы сохранённых таблиц
@@ -618,7 +620,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

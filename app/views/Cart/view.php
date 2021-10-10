@@ -87,6 +87,11 @@
 									<label for="address">Note</label>
 									<textarea name="note" class="form-control"></textarea>
 								</div>
+                                <div class="form-group">
+                                    <label for="pay">
+                                        <input type="checkbox" id="pay" name="pay"> Оплатить онлайн
+                                    </label>
+                                </div>
 								<button type="submit" class="btn btn-default">Оформить</button>
 							</form>
 							<?php if(isset($_SESSION['form_data'])) unset($_SESSION['form_data']); ?>

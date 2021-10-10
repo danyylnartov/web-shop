@@ -39,11 +39,23 @@
 								</thead>
 								<tbody>
 								<?php foreach ($orders as $order): ?>
-									<?php $class = $order['status'] ? 'table-success' : ''; ?>
+									<?php
+                                    if ($order['status'] == 1) {
+                                        $class = 'table-success';
+                                        $text = 'Завершён';
+                                    } elseif ($order['status'] == 2) {
+										$class = 'table-info';
+										$text = 'Оплачен';
+                                    } else {
+										$class = '';
+										$text = 'Новый';
+                                    }
+                                    //$class = $order['status'] ? 'table-success' : '';
+                                    ?>
 									<tr class="<?=$class;?>">
 										<td><?=$order['id'];?></td>
 										<td><?=$order['name'];?></td>
-										<td><?=$order['status'] ? 'Завершён' : 'Новый';?></td>
+										<td><?=$text;?></td>
 										<td><?=$order['sum'];?> <?=$order['currency'];?></td>
 										<td><?=$order['date'];?></td>
 										<td><?=$order['update_at'];?></td>

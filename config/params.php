@@ -13,4 +13,6 @@ return [
 	'img_height' => 200,
 	'gallery_width' => 700,
 	'gallery_height' => 1000,
+	'ik_key' => 'HHKR8lAnNrerf8Mg',
+	'ik_id' => '6162aa4433605d1a0d516565',
 ];
