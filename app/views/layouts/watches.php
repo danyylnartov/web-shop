@@ -19,6 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="interkassa-verification" content="c02567e180c152ce3ef68d8e37bedf7d" />
 
 </head>
 <body>
@@ -283,11 +284,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="js/main.js"></script>
 
 <?php
+if (DEBUG) {
     $logs = \RedBeanPHP\R::getDatabaseAdapter()
         ->getDatabase()
         ->getLogger();
 
     debug($logs->grep('SELECT'));
+}
 ?>
 
 </body>
