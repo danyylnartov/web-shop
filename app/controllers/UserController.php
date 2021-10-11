@@ -5,6 +5,7 @@ namespace app\controllers;
 
 
 use app\models\User;
+use RedBeanPHP\R;
 
 class UserController extends AppController {
 
@@ -83,6 +84,15 @@ class UserController extends AppController {
 			redirect();
 		}
 		$this->setMeta('Изменение личных данных');
+	}
+
+	public function ordersAction() {
+		if (!User::checkAuth()) {
+			redirect('/user/login');
+		}
+		$orders = R::findAll('order', "user_id = ?", [$_SESSION['user']['id']]);
+		$this->setMeta('История заказов');
+		$this->set(compact('orders'));
 	}
 
 }
