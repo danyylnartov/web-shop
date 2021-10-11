@@ -124,7 +124,7 @@ class CartController extends AppController {
 		$order = R::load('order', (int)$dataSet['ik_pm_no']);
 		if (!$order) die;
 
-		if ($dataSet['ik_co_id'] != App::$app->getProperty('ik_id') || $dataSet['ik_inv_st'] != 'success' || $dataSet['ik_am'] != $order->sum || $sign != $_POST['ik_sign']) {
+		if ($dataSet['ik_co_id'] != App::$app->getProperty('ik_id') || $dataSet['ik_inv_st'] != 'success' || $dataSet['ik_am'] != $order->sum || $dataSet['ik_cur'] != $order->currency || $sign != $_POST['ik_sign']) {
 			die();
 		}
 
